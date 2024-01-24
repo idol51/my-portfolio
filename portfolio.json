@@ -1,0 +1,23 @@
+{
+    "name": "Armaan Lodi",
+    "designation": "MERN Stack Dev",
+    "profile_pic": "/profile_nobg.png",
+    "github_username": "idol51",
+    "projects": [{
+        "name": "Project 1",
+        "description": "",
+        "image_url": ""
+    }, {
+        "name": "",
+        "description": "",
+        "image_url": ""
+    }, {
+        "name": "",
+        "description": "",
+        "image_url": ""
+    }, {
+        "name": "",
+        "description": "",
+        "image_url": ""
+    }]
+}
