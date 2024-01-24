@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import Sidebar from '@/components/custom/sidebar'
 import Topbar from '@/components/custom/topbar'
+import { TooltipProvider } from '@/components/ui/tooltip'
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -35,11 +36,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Topbar />
-          <div className='p-6 pt-0 flex-1 flex gap-6'>
-            <Sidebar />
-            {children}
-          </div>
+          <TooltipProvider>
+            <Topbar />
+            <div className='p-6 pt-0 flex-1 flex gap-6'>
+              <Sidebar />
+              {children}
+            </div>
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

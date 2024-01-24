@@ -3,21 +3,39 @@
     "designation": "MERN Stack Dev",
     "profile_pic": "/profile_nobg.png",
     "github_username": "idol51",
+    "linkedin_username": "armaan-lodi-867164197",
     "projects": [{
         "name": "Project 1",
-        "description": "",
-        "image_url": ""
+        "description": "This is a project.",
+        "image_url": "/projects/npm.jpeg",
+        "github_repo": ""
     }, {
         "name": "",
         "description": "",
-        "image_url": ""
+        "image_url": "/projects/npm.jpeg",
+        "github_repo": ""
     }, {
         "name": "",
         "description": "",
-        "image_url": ""
+        "image_url": "/projects/npm.jpeg",
+        "github_repo": ""
     }, {
         "name": "",
         "description": "",
-        "image_url": ""
+        "image_url": "/projects/npm.jpeg",
+        "github_repo": ""
+    }],
+    "skills": [{
+        "category": "Frontend",
+        "tech_stack": [{ "name": "HTML", "image_url": "/skills/html.png" }, { "name": "CSS", "image_url": "/skills/css.png" }, { "name": "Javascript", "image_url": "/skills/js.png" }, { "name": "Typescript", "image_url": "/skills/ts.png" }, { "name": "React JS", "image_url": "/skills/react.png" }, { "name": "Tailwind CSS", "image_url": "/skills/tailwindcss.png" }] 
+    }, {
+        "category": "Backend",
+        "tech_stack": [{ "name": "Javascript", "image_url": "/skills/js.png" }, { "name": "Typescript", "image_url": "/skills/ts.png" }, { "name": "Node JS", "image_url": "/skills/node.png" }, { "name": "Express JS", "image_url": "/skills/express.png" }] 
+    }, {
+        "category": "Database",
+        "tech_stack": [{ "name": "Mongo DB", "image_url": "/skills/mongodb.png" }, { "name": "Redis DB", "image_url": "/skills/redis.png" }, { "name": "Firebase", "image_url": "/skills/firebase.png" }] 
+    }, {
+        "category": "DevOps",
+        "tech_stack": [{ "name": "Docker", "image_url": "/skills/docker.png" }, { "name": "Nginx", "image_url": "/skills/nginx.png" }] 
     }]
 }

@@ -4,9 +4,12 @@ import { Separator } from '@/components/ui/separator';
 import { Github } from 'lucide-react';
 import Image from 'next/image'
 import data from "../../portfolio.json"
+import Link from 'next/link';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 export default function Home() {
   return (
+    //  subheader
     <div className='flex flex-col flex-1 gap-6'>
       <div className='bg-banner text-secondary rounded-lg'>
         <div className='backdrop-blur-sm p-6 flex justify-between items-center'>
@@ -19,35 +22,56 @@ export default function Home() {
               <span className='text-black'>{data.designation}</span>
             </div>
           </div>
-          <a href={"https://github.com/" + data.github_username} target='_blank'>
+          <Link href={"https://github.com/" + data.github_username} target='_blank'>
             <Button className='gap-3 flex bg-black text-white hover:scale-105 hover:bg-black transition duration-300'>
               <Github />
               <Separator className='bg-white' orientation='vertical' />
               Follow me on Github
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
 
+      {/* projects */}
       <div>
         <span className='text-2xl font-semibold'>Projects</span>
         <div className='gap-6 mt-4 grid grid-cols-4'>
           { data.projects.map((project, i) => (
-            <div key={i} className='overflow-hidden bg-white rounded-lg'>
+            <div key={i} className='overflow-hidden bg-white rounded-lg shadow-lg'>
               <div className='aspect-video bg-slate-400 relative'>
                 <Image src={project.image_url} alt="img" fill={true} />
               </div>
               <div className='p-4 flex flex-col w-full'>
-                <span className='text-black'>{project.name}</span>
-                <span className='text-black'>{project.description}</span>
+                <span className='text-black text-lg font-semibold'>{project.name}</span>
+                <span className='text-black line-clamp-2'>{project.description}</span>
               </div>
             </div>
           )) }
         </div>
       </div>
 
+      {/* skills */}
       <div>
         <span className='text-2xl font-semibold'>Skills</span>
+        <div className='gap-6 mt-4 grid grid-cols-4'>
+          { data.skills.map((skill, i) => (
+            <div key={i} className='bg-foreground rounded-lg p-4 flex flex-col gap-4'>
+              <span className='text-primary font-semibold text-lg tracking-wide'>{skill.category}</span>
+              <div className='grid grid-cols-5 gap-4'>
+                { skill.tech_stack.map((val) => (
+                  <Tooltip key={JSON.stringify(val)}>
+                    <TooltipTrigger>
+                      <img className='aspect-square w-full rounded-md' src={val.image_url} alt="" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      {val.name}
+                    </TooltipContent>
+                  </Tooltip>
+                )) }
+              </div>
+            </div>
+          )) }
+        </div>
       </div>
     </div>
   )
