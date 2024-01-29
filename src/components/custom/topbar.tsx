@@ -2,16 +2,16 @@
 
 import React, { useEffect, useState } from 'react'
 import { Toggle } from '../ui/toggle'
-import { Circle, CircleDot, Command, Moon, Sun, Terminal } from 'lucide-react'
+import { Moon, Sun, Terminal } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 export default function Topbar() {
     const [ isDarkMode, setIsDarkMode ] = useState<boolean>(true)
-    const { setTheme, theme } = useTheme();
+    const { setTheme } = useTheme();
 
     useEffect(() => {
       setTheme(isDarkMode ? 'dark' : 'light')
-    }, [isDarkMode])
+    }, [isDarkMode, setTheme])
        
   return (
     <div className='w-full h-16 px-6 justify-between items-center flex'>

@@ -63,7 +63,9 @@ export default function Home() {
                 { skill.tech_stack.map((val) => (
                   <Tooltip key={JSON.stringify(val)}>
                     <TooltipTrigger>
-                      <img className='aspect-square w-full rounded-md' src={val.image_url} alt="" />
+                      <div className='relative w-full aspect-square'>
+                        <Image className='rounded-md' fill src={val.image_url} alt="" />
+                      </div>
                     </TooltipTrigger>
                     <TooltipContent>
                       {val.name}
