@@ -35,17 +35,19 @@ export default function Home() {
       {/* projects */}
       <div>
         <span className='text-2xl font-semibold'>Projects</span>
-        <div className='gap-6 mt-4 grid grid-cols-4'>
+        <div className='gap-6 mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           { data.projects.map((project, i) => (
-            <div key={i} className='overflow-hidden bg-white rounded-lg shadow-lg'>
-              <div className='aspect-video bg-slate-400 relative'>
-                <Image src={project.image_url} alt="img" fill={true} />
+            <Link target='_blank' href={"https://github.com/" + data.github_username + "/" + project.github_repo} key={i}>
+              <div className='h-full overflow-hidden bg-white rounded-lg shadow-lg hover:scale-105 transition'>
+                <div className='aspect-video bg-slate-400 relative'>
+                  <Image src={project.image_url} alt="img" fill={true} />
+                </div>
+                <div className='p-4 flex flex-col w-full'>
+                  <span className='text-black text-lg font-semibold'>{project.name}</span>
+                  <span className='text-black line-clamp-2'>{project.description}</span>
+                </div>
               </div>
-              <div className='p-4 flex flex-col w-full'>
-                <span className='text-black text-lg font-semibold'>{project.name}</span>
-                <span className='text-black line-clamp-2'>{project.description}</span>
-              </div>
-            </div>
+            </Link>
           )) }
         </div>
       </div>
@@ -53,7 +55,7 @@ export default function Home() {
       {/* skills */}
       <div>
         <span className='text-2xl font-semibold'>Skills</span>
-        <div className='gap-6 mt-4 grid grid-cols-4'>
+        <div className='gap-6 mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           { data.skills.map((skill, i) => (
             <div key={i} className='bg-foreground rounded-lg p-4 flex flex-col gap-4'>
               <span className='text-primary font-semibold text-lg tracking-wide'>{skill.category}</span>

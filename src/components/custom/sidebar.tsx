@@ -5,7 +5,7 @@ import data from "../../../portfolio.json"
 
 export default function Sidebar() {
   return (
-    <div className='w-80 rounded-lg bg-foreground p-8'>
+    <div className='w-80 rounded-lg bg-foreground p-8 hidden xl:block'>
       <ul className='mb-4'>
         <Link href={"/"}>
           <li className='hover:scale-110 hover:cursor-pointer origin-left transition flex ms-3 gap-2 text-primary mb-6'>
