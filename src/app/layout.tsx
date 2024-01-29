@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter as FontSans } from "next/font/google"
+import { Inter } from "next/font/google"
 import './globals.css'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
@@ -7,7 +7,7 @@ import Sidebar from '@/components/custom/sidebar'
 import Topbar from '@/components/custom/topbar'
 import { TooltipProvider } from '@/components/ui/tooltip'
 
-export const fontSans = FontSans({
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 })
